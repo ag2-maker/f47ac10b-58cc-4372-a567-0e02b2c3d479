@@ -1,0 +1,591 @@
+<!DOCTYPE html><html><head>
+      <title>n8n_devops_doc</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\ariel\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.19\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="n8n-workflow-monitoring-implementation-guide-devops-workflow">n8n Workflow Monitoring Implementation Guide (DevOps Workflow) </h1>
+<blockquote>
+<p>Complete setup guide for Error Tracking and Performance Monitoring workflows</p>
+</blockquote>
+<hr>
+<h2 id="table-of-contents">Table of Contents </h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#error-tracking-workflow">Error Tracking Workflow</a></li>
+<li><a href="#performance-monitoring-workflow">Performance Monitoring Workflow</a></li>
+<li><a href="#integration-steps">Integration Steps</a></li>
+<li><a href="#environment-variables">Environment Variables</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ol>
+<hr>
+<h2 id="overview">Overview </h2>
+<p>This guide covers implementing two monitoring workflows in n8n:</p>
+<ul>
+<li><strong>Error Tracking</strong>: Automatically captures and reports workflow failures</li>
+<li><strong>Performance Monitoring</strong>: Analyzes execution times and alerts on performance degradation</li>
+</ul>
+<p>Both workflows use Slack for alerting and can be applied to any existing n8n workflow.</p>
+<hr>
+<h2 id="error-tracking-workflow">Error Tracking Workflow </h2>
+<h3 id="purpose">Purpose </h3>
+<p>Automatically detect and report workflow failures across your n8n instance.</p>
+<h3 id="architecture">Architecture </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Error Trigger → Alert (E.g. Slack Message)
+</code></pre><h3 id="implementation-steps">Implementation Steps </h3>
+<h4 id="step-1-create-error-tracking-workflow">Step 1: Create Error Tracking Workflow </h4>
+<ol>
+<li>Create a new workflow named <code>Error_Tracking_Monitor</code></li>
+<li>Add an <strong>Error Trigger</strong> node</li>
+</ol>
+<p><img src="image.png" alt="alt text"></p>
+<ol start="3">
+<li>Add a <strong>Slack</strong> node for notifications</li>
+</ol>
+<p><img src="image-1.png" alt="alt text"></p>
+<h4 id="step-2-enable-error-reporting-in-target-workflows">Step 2: Enable Error Reporting in Target Workflows </h4>
+<ol>
+<li>Open the workflow you want to monitor</li>
+<li>Go to <strong>Workflow Settings</strong><br>
+<img src="image-2.png" alt="alt text"></li>
+<li>Navigate to <strong>Error Workflow</strong> section and select <code>Error_Tracking_Workflow</code><br>
+<img src="image-3.png" alt="alt text"></li>
+<li>Save those settings</li>
+</ol>
+<p>After following these steps we have enabled the error tracking feature for our workflow.</p>
+<h4 id="error-message-format-example">Error Message Format Example </h4>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>[
+  {
+    "execution": {
+      "id": "13853",
+      "url": "https://n8n.tsl.io/workflow/RPZ73q9NNp5raKiL/executions/13853",
+      "error": {
+        "level": "warning",
+        "tags": {},
+        "description": "You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/letscrape-6bRBa3QguO5/api/company-data12",
+        "timestamp": 1758476386005,
+        "context": {
+          "itemIndex": 0,
+          "request": {
+            "headers": {
+              "x-rapidapi-host": "company-data12.p.rapidapi.com",
+              "x-rapidapi-key": "617cab6a0emshf5244ed29928f8ep1a2622jsndcf793902fe0",
+              "accept": "application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7"
+            },
+            "method": "GET",
+            "uri": "https://company-data12.p.rapidapi.com/company-search",
+            "gzip": true,
+            "rejectUnauthorized": true,
+            "followRedirect": true,
+            "resolveWithFullResponse": true,
+            "followAllRedirects": true,
+            "timeout": 300000,
+            "qs": {
+              "query": "The SilverLogic",
+              "limit": "10",
+              "min_rating": "any",
+              "min_review_count": "any",
+              "locale": "en-US"
+            },
+            "encoding": null,
+            "json": false,
+            "useStream": true
+          }
+        },
+        "functionality": "regular",
+        "name": "NodeApiError",
+        "node": {
+          "parameters": {
+            "preBuiltAgentsCalloutHttpRequest": "",
+            "curlImport": "",
+            "method": "GET",
+            "url": "https://company-data12.p.rapidapi.com/company-search",
+            "authentication": "none",
+            "provideSslCertificates": false,
+            "sendQuery": true,
+            "specifyQuery": "keypair",
+            "queryParameters": {
+              "parameters": [
+                {
+                  "name": "query",
+                  "value": "={{ $json.apiQuery }}"
+                },
+                {
+                  "name": "limit",
+                  "value": "10"
+                },
+                {
+                  "name": "min_rating",
+                  "value": "any"
+                },
+                {
+                  "name": "min_review_count",
+                  "value": "any"
+                },
+                {
+                  "name": "locale",
+                  "value": "en-US"
+                }
+              ]
+            },
+            "sendHeaders": true,
+            "specifyHeaders": "keypair",
+            "headerParameters": {
+              "parameters": [
+                {
+                  "name": "x-rapidapi-host",
+                  "value": "company-data12.p.rapidapi.com"
+                },
+                {
+                  "name": "x-rapidapi-key",
+                  "value": "617cab6a0emshf5244ed29928f8ep1a2622jsndcf793902fe0"
+                }
+              ]
+            },
+            "sendBody": false,
+            "options": {},
+            "infoMessage": ""
+          },
+          "type": "n8n-nodes-base.httpRequest",
+          "typeVersion": 4.2,
+          "position": [
+            752,
+            -80
+          ],
+          "id": "91e4817a-7663-4691-98dc-23b07d54a914",
+          "name": "Company Search"
+        },
+        "messages": [
+          "Try spacing your requests out using the batching settings under 'Options'"
+        ],
+        "httpCode": "429",
+        "message": "The service is receiving too many requests from you",
+        "stack": "NodeApiError: The service is receiving too many requests from you\n    at ExecuteContext.execute (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/n8n-nodes-base@file+packages+nodes-base_@aws-sdk+credential-providers@3.808.0_asn1.js@5_1af219c3f47f2a1223ec4ccec249a974/node_modules/n8n-nodes-base/nodes/HttpRequest/V3/HttpRequestV3.node.ts:783:16)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at WorkflowExecute.executeNode (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/n8n-core@file+packages+core_@opentelemetry+api@1.9.0_@opentelemetry+sdk-trace-base@1.30_5aee33ef851c7de341eb325c6a25e0ff/node_modules/n8n-core/src/execution-engine/workflow-execute.ts:1253:8)\n    at WorkflowExecute.runNode (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/n8n-core@file+packages+core_@opentelemetry+api@1.9.0_@opentelemetry+sdk-trace-base@1.30_5aee33ef851c7de341eb325c6a25e0ff/node_modules/n8n-core/src/execution-engine/workflow-execute.ts:1427:11)\n    at /usr/local/lib/node_modules/n8n/node_modules/.pnpm/n8n-core@file+packages+core_@opentelemetry+api@1.9.0_@opentelemetry+sdk-trace-base@1.30_5aee33ef851c7de341eb325c6a25e0ff/node_modules/n8n-core/src/execution-engine/workflow-execute.ts:1727:27\n    at /usr/local/lib/node_modules/n8n/node_modules/.pnpm/n8n-core@file+packages+core_@opentelemetry+api@1.9.0_@opentelemetry+sdk-trace-base@1.30_5aee33ef851c7de341eb325c6a25e0ff/node_modules/n8n-core/src/execution-engine/workflow-execute.ts:2303:11"
+      },
+      "lastNodeExecuted": "Company Search",
+      "mode": "webhook"
+    },
+    "workflow": {
+      "id": "RPZ73q9NNp5raKiL",
+      "name": "BRDGIT ROI ASSESSMENT ASSISTANT"
+    }
+  }
+]
+</code></pre><hr>
+<h2 id="performance-monitoring-workflow">Performance Monitoring Workflow </h2>
+<h3 id="purpose-1">Purpose </h3>
+<p>Monitor workflow execution times and alert when performance degrades significantly compared to historical averages.</p>
+<h3 id="architecture-1">Architecture </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Webhook Trigger → Get Current Execution → Get Historical Executions → Performance Analysis → Slack Alert
+</code></pre><h3 id="implementation-steps-1">Implementation Steps </h3>
+<h4 id="step-1-create-performance-monitoring-workflow">Step 1: Create Performance Monitoring Workflow </h4>
+<p>Create a new workflow named <code>Performance_Monitor</code>, this workflow will have four nodes:</p>
+<p><img src="image-5.png" alt="alt text"></p>
+<h4 id="step-2-configure-1st-node---webhook-trigger">Step 2: Configure 1st Node - Webhook Trigger </h4>
+<p><strong>Node Configuration:</strong></p>
+<ul>
+<li><strong>Node Type:</strong> Webhook</li>
+<li><strong>HTTP Method:</strong> POST</li>
+<li><strong>Path:</strong> leave as default value</li>
+<li><strong>Response Mode:</strong> Immediately</li>
+</ul>
+<p><img src="image-6.png" alt="alt text"></p>
+<h4 id="step-3-set-http-post-request-to-trigger-the-performance-monitor-workflow">Step 3: Set HTTP Post Request to trigger the Performance Monitor Workflow </h4>
+<p>Add an HTTP Request Node inside of the workflow we want to monitor, this will be a POST request:<br>
+<img src="image-11.png" alt="alt text"></p>
+<dl>
+<dt><img src="image-12.png" alt="alt text"></dt>
+<dd>
+<p>Fill the URL field with the Production URL from the Performance Monitor Workflow's first node and replicate the settings shown in the image above.</p>
+</dd>
+<dd>
+<p>For the body of this HTTP Post request use the following JSON:</p>
+</dd>
+</dl>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>{
+    "workflow_name": "{{$workflow.name}}",
+    "workflow_id": "{{$workflow.id}}",
+    "execution_id": "{{$execution.id}}"
+  }
+</code></pre><h4 id="step-4-n8n-endpoint-and-api-key">Step 4: n8n Endpoint and API Key </h4>
+<p>In order to access the execution logs of any workflow, n8n provides the following endpoint:</p>
+<p><strong>API Endpoint:</strong></p>
+<p><code>https://n8n.tsl.io/api/v1/executions/</code></p>
+<p>To be able to use it in our Performance Monitor workflow, we need to configure an API Key.</p>
+<ol>
+<li>
+<p>Access account settings on n8n:<br>
+<img src="image-7.png" alt="alt text"></p>
+</li>
+<li>
+<p>Click on n8n API and create a new API Key:<br>
+<img src="image-8.png" alt="alt text"><br>
+<img src="image-9.png" alt="alt text"></p>
+</li>
+<li>
+<p>Once created, copy the API Key, as we'll need it for the following steps:<br>
+<img src="image-10.png" alt="alt text"></p>
+</li>
+</ol>
+<h4 id="step-5-configure-current-execution-http-request">Step 5: Configure Current Execution HTTP Request </h4>
+<p>Back to the Performance Monitor Workflow, add an HTTP Request node (GET), you can name it Get_Current_Execution:<br>
+<img src="image-13.png" alt="alt text"></p>
+<p>We are going to use the endpoint shared in the prior step and add the <code>execution_id</code> as a parameter (this comes from the HTTP Post Request we added to the workflow we are monitoring).</p>
+<p>Set the URL type to 'Expression' and use the following URL:<br>
+<img src="image-14.png" alt="alt text"></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>https://n8n.tsl.io/api/v1/executions/{{$json.body.execution_id}}
+</code></pre><p>Finally, we need to add as a header parameter the n8n API key we created on Step 4, use as Name <code>X-N8N-API-KEY</code> and paste in the Value field the API Key.</p>
+<h4 id="step-6-configure-historical-executions-http-request">Step 6: Configure Historical Executions HTTP Request </h4>
+<p>Create a second HTTP GET request, similar to Step 5, and replicate the settings bellow (you can name it Get_All_Executions):<br>
+<img src="image-15.png" alt="alt text"><br>
+<img src="image-16.png" alt="alt text"></p>
+<p><strong>Node Configuration:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span><span class="token punctuation">{</span>
+    workflowId<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> $('Webhook').item.json.body.workflow_id <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    limit<span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+    status<span class="token operator">:</span> success<span class="token punctuation">,</span>
+    includeData<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+</code></pre><p><em>Note: Make sure to change the value type of the workflowId parameter to <code>Expression</code></em></p>
+<p>Feel free to play around with the <code>limit</code> value (this represents how many execution logs to fetch), the good practice is to include as much executions as possible given the execution history of the workflow we want to monitor. If the workflow has changed a lot in its production history, we may need to lower the limit value to represent the most recent execution timing pattern for fair comparisons.</p>
+<h4 id="step-5-configure-performance-analysis-code-node">Step 5: Configure Performance Analysis Code Node </h4>
+<p>The last step is to incorporate the performance analysis logic, we need to create a Code Node and use the following code:</p>
+<p><strong>Node Configuration:</strong></p>
+<ul>
+<li><strong>Node Type:</strong> Code</li>
+<li><strong>Language:</strong> JavaScript</li>
+</ul>
+<p><strong>Code Block:</strong></p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">// === DevOps Performance Analysis  ===</span>
+
+<span class="token comment">// Get webhook data</span>
+<span class="token keyword keyword-const">const</span> webhookData <span class="token operator">=</span> items<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">json</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Get data from other nodes using node references</span>
+<span class="token keyword keyword-let">let</span> currentExecution<span class="token punctuation">,</span> historicalResponse<span class="token punctuation">;</span>
+
+<span class="token keyword control-flow keyword-try">try</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Try to get data from the HTTP Request nodes by name</span>
+  currentExecution <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"Get_Current_Execution"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">json</span><span class="token punctuation">;</span>
+  historicalResponse <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"Get_All_Executions"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">json</span><span class="token punctuation">;</span>
+
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Current execution:"</span><span class="token punctuation">,</span> currentExecution<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Historical response:"</span><span class="token punctuation">,</span> historicalResponse<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword control-flow keyword-catch">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Error accessing node data:"</span><span class="token punctuation">,</span> error<span class="token punctuation">.</span><span class="token property-access">message</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Fallback: if we can't access by name, return error</span>
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">alert_needed</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">"Could not access execution data from HTTP Request nodes"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">execution_id</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">workflow_name</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">available_items</span><span class="token operator">:</span> items<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">webhook_data</span><span class="token operator">:</span> webhookData<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Validate API responses</span>
+<span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>currentExecution <span class="token operator">||</span> currentExecution<span class="token punctuation">.</span><span class="token property-access">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">alert_needed</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">"Failed to fetch current execution data"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">execution_id</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">workflow_name</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">current_execution</span><span class="token operator">:</span> currentExecution <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>historicalResponse <span class="token operator">||</span> historicalResponse<span class="token punctuation">.</span><span class="token property-access">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">alert_needed</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">error</span><span class="token operator">:</span> <span class="token string">"Failed to fetch historical execution data"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">execution_id</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">workflow_name</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">historical_response</span><span class="token operator">:</span> historicalResponse <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-const">const</span> historicalExecutions <span class="token operator">=</span>
+  historicalResponse<span class="token punctuation">.</span><span class="token property-access">data</span> <span class="token operator">||</span> historicalResponse <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Check if current execution completed</span>
+<span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>currentExecution<span class="token punctuation">.</span><span class="token property-access">stoppedAt</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Note: API doesn't return status field, check if it failed by other means</span>
+  <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>currentExecution<span class="token punctuation">.</span><span class="token property-access">finished</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">alert_needed</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">severity</span><span class="token operator">:</span> <span class="token string">"critical"</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">alert_type</span><span class="token operator">:</span> <span class="token string">"execution_error"</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">workflow_name</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">execution_id</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Workflow execution failed or still running</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+          <span class="token literal-property property">slack_message</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">channel</span><span class="token operator">:</span> <span class="token string">"#alerts"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">🚨 *Workflow Execution Issue: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>webhookData<span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">*</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+            <span class="token literal-property property">attachments</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">"danger"</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">fields</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Execution ID"</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">\`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>webhookData<span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\`</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">short</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">{</span>
+                    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Finished"</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">value</span><span class="token operator">:</span> currentExecution<span class="token punctuation">.</span><span class="token property-access">finished</span> <span class="token operator">?</span> <span class="token string">"Yes"</span> <span class="token operator">:</span> <span class="token string">"No"</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">short</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">alert_needed</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Execution </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>webhookData<span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> still running (finished: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>currentExecution<span class="token punctuation">.</span><span class="token property-access">finished</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">execution_id</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">workflow_name</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Calculate current execution duration</span>
+<span class="token keyword keyword-const">const</span> currentStartTime <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>currentExecution<span class="token punctuation">.</span><span class="token property-access">startedAt</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> currentEndTime <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>currentExecution<span class="token punctuation">.</span><span class="token property-access">stoppedAt</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> currentDuration <span class="token operator">=</span> <span class="token punctuation">(</span>currentEndTime <span class="token operator">-</span> currentStartTime<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">;</span> <span class="token comment">// seconds</span>
+
+<span class="token comment">// Filter and calculate historical durations</span>
+<span class="token keyword keyword-const">const</span> historicalDurations <span class="token operator">=</span> historicalExecutions
+  <span class="token punctuation">.</span><span class="token method function property-access">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">exec</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Exclude current execution and incomplete executions</span>
+    <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">(</span>
+      exec<span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">!==</span> webhookData<span class="token punctuation">.</span><span class="token property-access">execution_id</span> <span class="token operator">&amp;&amp;</span>
+      exec<span class="token punctuation">.</span><span class="token property-access">stoppedAt</span> <span class="token operator">&amp;&amp;</span>
+      exec<span class="token punctuation">.</span><span class="token property-access">finished</span> <span class="token operator">===</span> <span class="token boolean">true</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">exec</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> start <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>exec<span class="token punctuation">.</span><span class="token property-access">startedAt</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-const">const</span> end <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>exec<span class="token punctuation">.</span><span class="token property-access">stoppedAt</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-const">const</span> duration <span class="token operator">=</span> <span class="token punctuation">(</span>end <span class="token operator">-</span> start<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+    <span class="token keyword control-flow keyword-return">return</span> duration<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">duration</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Filter out unreasonable durations (0-1 hour range)</span>
+    <span class="token keyword control-flow keyword-return">return</span> duration <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> duration <span class="token operator">&lt;</span> <span class="token number">3600</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Check if we have enough historical data</span>
+<span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>historicalDurations<span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">json</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">alert_needed</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Insufficient historical data for </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>webhookData<span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> (</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>historicalDurations<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> successful executions)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">current_duration</span><span class="token operator">:</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">round</span><span class="token punctuation">(</span>currentDuration<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">execution_id</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">workflow_name</span><span class="token operator">:</span> webhookData<span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">historical_count</span><span class="token operator">:</span> historicalDurations<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Calculate performance statistics</span>
+<span class="token keyword keyword-const">const</span> avgDuration <span class="token operator">=</span>
+  historicalDurations<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">sum<span class="token punctuation">,</span> d</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> sum <span class="token operator">+</span> d<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">/</span>
+  historicalDurations<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> slownessFactor <span class="token operator">=</span> currentDuration <span class="token operator">/</span> avgDuration<span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> slownessPercentage <span class="token operator">=</span> <span class="token punctuation">(</span>slownessFactor <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Fixed thresholds</span>
+<span class="token keyword keyword-const">const</span> thresholds <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">notice</span><span class="token operator">:</span> <span class="token number">1.3</span><span class="token punctuation">,</span> <span class="token comment">// 30% slower</span>
+  <span class="token literal-property property">warning</span><span class="token operator">:</span> <span class="token number">1.5</span><span class="token punctuation">,</span> <span class="token comment">// 50% slower</span>
+  <span class="token literal-property property">critical</span><span class="token operator">:</span> <span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token comment">// 100% slower</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Determine if alert is needed</span>
+<span class="token keyword keyword-const">const</span> isSignificantlySlow <span class="token operator">=</span> slownessFactor <span class="token operator">&gt;</span> thresholds<span class="token punctuation">.</span><span class="token property-access">notice</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Generate result</span>
+<span class="token keyword keyword-const">const</span> result <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">alert_needed</span><span class="token operator">:</span> isSignificantlySlow<span class="token punctuation">,</span>
+  <span class="token literal-property property">workflow_name</span><span class="token operator">:</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"Webhook"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">json</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">workflow_id</span><span class="token operator">:</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"Webhook"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">json</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">workflow_id</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">execution_id</span><span class="token operator">:</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"Webhook"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">json</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">current_duration</span><span class="token operator">:</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">round</span><span class="token punctuation">(</span>currentDuration<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">average_duration</span><span class="token operator">:</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">round</span><span class="token punctuation">(</span>avgDuration<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">slowness_percentage</span><span class="token operator">:</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">round</span><span class="token punctuation">(</span>slownessPercentage<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">slowness_factor</span><span class="token operator">:</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">round</span><span class="token punctuation">(</span>slownessFactor <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">historical_count</span><span class="token operator">:</span> historicalDurations<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">timestamp</span><span class="token operator">:</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// OPTIONAL STEP: Add Slack message if alert needed. ***If you are not sending messages through slack or want to change the format feel free to do so...***</span>
+
+<span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>isSignificantlySlow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  result<span class="token punctuation">.</span><span class="token property-access">slack_message</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">channel</span><span class="token operator">:</span> <span class="token string">"#alerts"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">⚠️ *Performance Alert: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>
+      <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"Webhook"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">json</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">workflow_name</span>
+    <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">*</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token literal-property property">attachments</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">color</span><span class="token operator">:</span>
+          slownessFactor <span class="token operator">&gt;</span> thresholds<span class="token punctuation">.</span><span class="token property-access">critical</span>
+            <span class="token operator">?</span> <span class="token string">"danger"</span>
+            <span class="token operator">:</span> slownessFactor <span class="token operator">&gt;</span> thresholds<span class="token punctuation">.</span><span class="token property-access">warning</span>
+            <span class="token operator">?</span> <span class="token string">"warning"</span>
+            <span class="token operator">:</span> <span class="token string">"good"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">fields</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Current Duration"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token punctuation">.</span><span class="token property-access">current_duration</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">s</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+            <span class="token literal-property property">short</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Average Duration"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token punctuation">.</span><span class="token property-access">average_duration</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">s</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+            <span class="token literal-property property">short</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Performance Impact"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token punctuation">.</span><span class="token property-access">slowness_percentage</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">% slower than average</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+            <span class="token literal-property property">short</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Based on"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token punctuation">.</span><span class="token property-access">historical_count</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> recent executions</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+            <span class="token literal-property property">short</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Execution ID"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">\`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token punctuation">.</span><span class="token property-access">execution_id</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\`</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+            <span class="token literal-property property">short</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">ts</span><span class="token operator">:</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">floor</span><span class="token punctuation">(</span><span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"DevOps Monitor Analysis:"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">workflow</span><span class="token operator">:</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"Webhook"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">json</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">workflow_name</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">current_duration</span><span class="token operator">:</span> result<span class="token punctuation">.</span><span class="token property-access">current_duration</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">average_duration</span><span class="token operator">:</span> result<span class="token punctuation">.</span><span class="token property-access">average_duration</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">slowness_percentage</span><span class="token operator">:</span> result<span class="token punctuation">.</span><span class="token property-access">slowness_percentage</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">alert_needed</span><span class="token operator">:</span> result<span class="token punctuation">.</span><span class="token property-access">alert_needed</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">historical_count</span><span class="token operator">:</span> result<span class="token punctuation">.</span><span class="token property-access">historical_count</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword control-flow keyword-return">return</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">json</span><span class="token operator">:</span> result <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre><p>In this code there's a Slack formatted message with the result for convenience, feel free to just use <code>result</code> if you are not sending messages through Slack and/or change the format accordingly.</p>
+<p>Make sure to save this workflow and set it to Active.</p>
+<h4 id="optional-step-configure-slack-alert-node">Optional Step: Configure Slack Alert Node </h4>
+<p><img src="image-17.png" alt="alt text"></p>
+<p>In this example we are using an If Node with a <code>true</code> branch that is triggered if <code>alert_needed === true</code>. This value comes from <code>result.slack_message</code> in the prior node.</p>
+<h4 id="important-integration-notes">Important Integration Notes </h4>
+<ul>
+<li>Set <strong>"Never Error"</strong> to <code>true</code> in monitoring HTTP requests</li>
+<li>Place monitoring calls at the end of business logic</li>
+<li>Ensure monitoring failures don't break main workflows</li>
+</ul>
+<hr>
+<h2 id="troubleshooting">Troubleshooting </h2>
+<h3 id="common-issues">Common Issues </h3>
+<h4 id="error-tracking-not-working">Error Tracking Not Working </h4>
+<ul>
+<li><strong>Verify error workflow is activated</strong></li>
+<li><strong>Check workflow settings have error reporting enabled</strong></li>
+<li><strong>Ensure Slack credentials are configured correctly</strong></li>
+</ul>
+<h4 id="performance-monitoring-issues">Performance Monitoring Issues </h4>
+<ul>
+<li><strong>Webhook not receiving data:</strong> Check HTTP request configuration in monitored workflow</li>
+<li><strong>API authentication failures:</strong> Verify N8N_API_KEY is correct</li>
+<li><strong>No historical data:</strong> Ensure workflow has been executed multiple times</li>
+</ul>
+<h4 id="performance-analysis-failures">Performance Analysis Failures </h4>
+<ul>
+<li><strong>"Cannot read properties of undefined":</strong> Check node connections and input structure</li>
+<li><strong>"Insufficient historical data":</strong> Need at least 3 successful executions for comparison</li>
+</ul>
+<h3 id="support-information">Support Information </h3>
+<h4 id="api-endpoints-used">API Endpoints Used </h4>
+<ul>
+<li><strong>Current Execution:</strong> <code>GET /api/v1/executions/{id}</code></li>
+<li><strong>Historical Executions:</strong> <code>GET /api/v1/executions</code></li>
+</ul>
+<h4 id="slack-message-format">Slack Message Format </h4>
+<p>Both workflows use Slack's attachment format for rich notifications with color coding and structured fields.</p>
+<h4 id="performance-thresholds">Performance Thresholds </h4>
+<ul>
+<li><strong>Notice (30% slower):</strong> Yellow alert</li>
+<li><strong>Warning (50% slower):</strong> Orange alert</li>
+<li><strong>Critical (100%+ slower):</strong> Red alert</li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion </h2>
+<p>These monitoring workflows provide comprehensive error tracking and performance analysis for n8n workflows. The error tracking requires no code changes to monitored workflows, while performance monitoring requires only a single HTTP request node addition.</p>
+<p>Both systems are designed to be non-intrusive and fail-safe, ensuring that monitoring issues don't affect business workflow operations.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
